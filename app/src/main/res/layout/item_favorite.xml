@@ -8,20 +8,21 @@
     app:cardUseCompatPadding="true"
     app:contentPadding="3dp"
     app:cardElevation="3dp"
+    app:cardCornerRadius="10dp"
     app:cardBackgroundColor="@color/colorWhite"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/payment_item"
+        android:id="@+id/favorite_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/payment_image"
+            android:id="@+id/favorite_image"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_cards_black"
+            tools:src="@tools:sample/avatars"
             app:civ_border_color="#feeee1"
             app:civ_border_width="2dp"
             app:civ_circle_background_color="#feeee1"
@@ -31,22 +32,22 @@
 
 
         <LinearLayout
-            android:id="@+id/payment_describe_linearlayout"
+            android:id="@+id/favorite_describe_linearlayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/payment_image"
+            android:layout_below="@id/favorite_image"
             android:layout_marginStart="10dp"
-            android:layout_toStartOf="@id/payment_image"
-            android:layout_toEndOf="@id/payment_image"
+            android:layout_toStartOf="@id/favorite_image"
+            android:layout_toEndOf="@id/favorite_image"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/payment_image"
+            app:layout_constraintStart_toEndOf="@+id/favorite_image"
             app:layout_constraintTop_toTopOf="parent">
 
 
             <TextView
-                android:id="@+id/payment_describe_title"
+                android:id="@+id/favorite_describe_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
@@ -54,7 +55,7 @@
                 android:gravity="center"
                 android:maxEms="8"
                 android:maxLines="1"
-                android:text="Describe something here"
+                tools:text="@tools:sample/lorem"
                 android:textSize="20sp" />
 
 

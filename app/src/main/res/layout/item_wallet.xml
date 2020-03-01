@@ -1,73 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:cardUseCompatPadding="true"
-    app:contentPadding="3dp"
-    app:cardElevation="3dp"
-    app:cardBackgroundColor="@color/colorWhite"
-    >
+    android:layout_margin="4dp"
+    app:cardElevation="2dp"
+    app:cardCornerRadius="20dp"
+    android:id="@+id/card_view"
+    tools:context=".HomeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/editItem"
+
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         >
 
-        <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/profile_image"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
-            tools:src="@tools:sample/backgrounds/scenic"
-            app:civ_border_width="2dp"
-            app:civ_border_color="#FF000000"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/main_card_background"/>
 
 
         <LinearLayout
-            android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/profile_image"
-            android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/profile_image"
-            android:layout_toRightOf="@id/profile_image"
-            android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_image">
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:padding="16dp"
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/title"
+                android:id="@+id/wallet_balance_textview"
+                android:textSize="36sp"
+                android:gravity="center"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:maxLines="2"
-                android:text="Title"
-                android:textColor="@color/colorBlack"
-                android:textSize="20sp"
-                android:textStyle="bold" />
+                android:textColor="@color/colorWhite"
+                android:text="1000 ₽"/>
 
-            <TextView
-                android:id="@+id/subTitlle"
+            <Button
+                android:id="@+id/wallet_update_balance_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
-                android:fontFamily="sans-serif-light"
-                android:maxLines="7"
-                android:text="Subtitle"
-                android:textSize="18sp" />
-
-
+                android:layout_marginTop="15dp"
+                android:textSize="22sp"
+                android:background="@drawable/main_button_oval_background"
+                android:textStyle="normal"
+                android:text="Пополнить кошелек"
+                android:textAllCaps="false"/>
         </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
+    </FrameLayout>
 </androidx.cardview.widget.CardView>

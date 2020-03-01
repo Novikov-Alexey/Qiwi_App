@@ -8,6 +8,7 @@
     app:cardUseCompatPadding="true"
     app:contentPadding="3dp"
     app:cardElevation="3dp"
+    app:cardCornerRadius="10dp"
     app:cardBackgroundColor="@color/colorWhite"
     >
 
@@ -28,7 +29,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_home_black"
+            tools:src="@tools:sample/avatars"
  />
 
 
@@ -55,9 +56,10 @@
                 android:gravity="center"
                 android:fontFamily="sans-serif-light"
                 android:maxLines="2"
+                android:minLines="2"
                 android:maxEms="4"
-                android:text="Describe something here"
-                android:textSize="18sp" />
+                tools:text="@tools:sample/lorem"
+                android:textSize="15sp" />
 
 
         </LinearLayout>
