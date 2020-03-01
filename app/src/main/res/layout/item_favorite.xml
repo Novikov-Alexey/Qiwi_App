@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardUseCompatPadding="true"
+    app:contentPadding="3dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="@color/colorWhite"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/payment_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/payment_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_cards_black"
+            app:civ_border_color="#feeee1"
+            app:civ_border_width="2dp"
+            app:civ_circle_background_color="#feeee1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <LinearLayout
+            android:id="@+id/payment_describe_linearlayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/payment_image"
+            android:layout_marginStart="10dp"
+            android:layout_toStartOf="@id/payment_image"
+            android:layout_toEndOf="@id/payment_image"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/payment_image"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+            <TextView
+                android:id="@+id/payment_describe_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:fontFamily="sans-serif-light"
+                android:gravity="center"
+                android:maxEms="8"
+                android:maxLines="1"
+                android:text="Describe something here"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
