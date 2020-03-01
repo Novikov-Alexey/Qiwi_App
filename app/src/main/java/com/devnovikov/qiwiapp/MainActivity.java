@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
         mFavoriteImageUrls.add("https://static.ssl.mts.ru/mts_rf/images/banner1_logo.png");
         mFavoriteTitles.add("Запасной номер");
 
+        mFavoriteImageUrls.add("https://static.ssl.mts.ru/mts_rf/images/banner1_logo.png");
+        mFavoriteTitles.add("МТС номер");
+
         mPaymentImageUrls.add("https://i.redd.it/j6myfqglup501.jpg");
         mPaymentTitles.add("Национальный парк");
 
@@ -77,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
 
         RecyclerView favoriteRecyclerView = findViewById(R.id.favorite_recyclerview);
         RecyclerView paymentRecyclerView = findViewById(R.id.payment_recyclerview);
-        //RecyclerView walletRecyclerView = findViewById(R.id.wallet_recyclerView);
+
 
         FavoriteAdapter favoriteAdapter = new FavoriteAdapter(this, mFavoriteImageUrls, mFavoriteTitles);
         PaymentAdapter paymentAdapter = new PaymentAdapter(this, mPaymentImageUrls, mPaymentTitles);
