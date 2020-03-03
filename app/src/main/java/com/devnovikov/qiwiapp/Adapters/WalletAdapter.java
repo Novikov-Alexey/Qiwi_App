@@ -14,10 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.devnovikov.qiwiapp.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class WalletAdapter extends RecyclerView.Adapter<WalletAdapter.ViewHolder> {
 
-    private ArrayList<String> mListOfWallet = new ArrayList<>();
+    private List<String> mListOfWallet = new ArrayList<>();
     private Listener listener;
 
     public interface Listener {
@@ -28,7 +29,7 @@ public class WalletAdapter extends RecyclerView.Adapter<WalletAdapter.ViewHolder
         this.listener = listener;
     }
 
-    public WalletAdapter(Context context, ArrayList<String> listOfWallet) {
+    public WalletAdapter(Context context, List<String> listOfWallet) {
         mListOfWallet = listOfWallet;
     }
 
@@ -49,17 +50,17 @@ public class WalletAdapter extends RecyclerView.Adapter<WalletAdapter.ViewHolder
         return mListOfWallet.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
         private Button mWalletUpdateBalanceButton;
         private TextView mWalletBalanceTextView;
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             mWalletUpdateBalanceButton = itemView.findViewById(R.id.wallet_update_balance_btn);
             mWalletBalanceTextView = itemView.findViewById(R.id.wallet_balance_textview);
         }
 
-        public void bind(int position) {
+        private void bind(int position) {
             mWalletBalanceTextView.setText(mListOfWallet.get(position));
             mWalletUpdateBalanceButton.setOnClickListener((View v) -> {
                 if (listener != null) {

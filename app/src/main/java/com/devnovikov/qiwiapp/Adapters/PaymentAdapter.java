@@ -15,13 +15,14 @@ import com.bumptech.glide.Glide;
 import com.devnovikov.qiwiapp.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.ViewHolder>{
+public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.ViewHolder> {
 
-    private ArrayList<String> mPaymentImageUrls = new ArrayList<>();
-    private ArrayList<String> mPaymentTitles = new ArrayList<>();
+    private List<String> mPaymentImageUrls = new ArrayList<>();
+    private List<String> mPaymentTitles = new ArrayList<>();
     private Context mContext;
 
     public PaymentAdapter(Context context, ArrayList<String> images, ArrayList<String> titles) {
@@ -47,19 +48,19 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.ViewHold
         return mPaymentImageUrls.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
         private CircleImageView mPaymentItemImage;
         private TextView mPaymentItemTitle;
         private ConstraintLayout mPaymentItem;
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             mPaymentItemImage = itemView.findViewById(R.id.payment_image);
             mPaymentItemTitle = itemView.findViewById(R.id.payment_describe_title);
             mPaymentItem = itemView.findViewById(R.id.payment_item);
         }
 
-        public void bind(int position) {
+        private void bind(int position) {
             Glide.with(mContext)
                     .asBitmap()
                     .load(mPaymentImageUrls.get(position))
@@ -67,7 +68,7 @@ public class PaymentAdapter extends RecyclerView.Adapter<PaymentAdapter.ViewHold
             mPaymentItemTitle.setText(mPaymentTitles.get(position));
 
             mPaymentItem.setOnClickListener((View view) -> {
-                Toast.makeText(mContext, mPaymentTitles.get(position).toString() + " clicked position: " + position  , Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, mPaymentTitles.get(position).toString() + " clicked position: " + position, Toast.LENGTH_SHORT).show();
             });
         }
     }

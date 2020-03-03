@@ -4,7 +4,7 @@
     android:layout_height="200dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_margin="4dp"
+    android:layout_margin="@dimen/vertical_margin_very_small"
     app:cardElevation="2dp"
     app:cardCornerRadius="20dp"
     android:id="@+id/card_view"
@@ -33,23 +33,22 @@
 
             <TextView
                 android:id="@+id/wallet_balance_textview"
-                android:textSize="36sp"
+                android:textSize="@dimen/text_size_very_big"
                 android:gravity="center"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="@color/colorWhite"
-                android:text="1000 ₽"/>
+                android:textColor="@color/colorWhite"/>
 
             <Button
                 android:id="@+id/wallet_update_balance_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:textSize="22sp"
+                android:layout_marginTop="@dimen/vertical_margin_medium"
+                android:textSize="@dimen/text_size_medium"
                 android:background="@drawable/main_button_oval_background"
                 android:textStyle="normal"
-                android:text="Пополнить кошелек"
+                android:text="@string/replenish"
                 android:textAllCaps="false"/>
         </LinearLayout>
     </FrameLayout>

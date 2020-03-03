@@ -2,4 +2,8 @@
     <string name="icon_search">Search</string>
 
     <string name="name">Qiwi App</string>
+    <string name="Favorite">Избранное</string>
+    <string name="All">Все</string>
+    <string name="payments">Платежи и переводы</string>
+    <string name="replenish">Пополнить кошелек</string>
 </resources>

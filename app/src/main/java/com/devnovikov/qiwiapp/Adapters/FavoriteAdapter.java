@@ -15,14 +15,15 @@ import com.bumptech.glide.Glide;
 import com.devnovikov.qiwiapp.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHolder>{
+public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHolder> {
 
 
-    private ArrayList<String> mFavoriteImageUrls = new ArrayList<>();
-    private ArrayList<String> mFavoriteTitles = new ArrayList<>();
+    private List<String> mFavoriteImageUrls = new ArrayList<>();
+    private List<String> mFavoriteTitles = new ArrayList<>();
     private Context mContext;
 
     public FavoriteAdapter(Context context, ArrayList<String> images, ArrayList<String> titles) {
@@ -48,20 +49,20 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
         return mFavoriteImageUrls.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         private CircleImageView mFavoriteItemImage;
         private TextView mFavoriteItemTitle;
         private ConstraintLayout mFavoriteItem;
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             mFavoriteItemImage = itemView.findViewById(R.id.favorite_image);
             mFavoriteItemTitle = itemView.findViewById(R.id.favorite_describe_title);
             mFavoriteItem = itemView.findViewById(R.id.favorite_item);
         }
 
-        public void bind(int position) {
+        private void bind(int position) {
             Glide.with(mContext)
                     .asBitmap()
                     .load(mFavoriteImageUrls.get(position))
@@ -69,7 +70,7 @@ public class FavoriteAdapter extends RecyclerView.Adapter<FavoriteAdapter.ViewHo
             mFavoriteItemTitle.setText(mFavoriteTitles.get(position));
 
             mFavoriteItem.setOnClickListener((View view) -> {
-                Toast.makeText(mContext, mFavoriteTitles.get(position).toString() + " clicked position: " + position  , Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, mFavoriteTitles.get(position).toString() + " clicked position: " + position, Toast.LENGTH_SHORT).show();
             });
         }
     }
